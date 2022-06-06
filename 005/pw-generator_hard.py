@@ -21,4 +21,9 @@ for char in range(1, nr_symbols +1):
 random.shuffle(password)
 final_pw = ''.join(password)
 
-print(final_pw)
+#instead join() could also just use
+#final_pw = ""
+#for char in password:
+#   final_pw += char
+
+print(f"Your password is {final_pw} .")
