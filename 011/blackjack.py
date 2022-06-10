@@ -1,12 +1,7 @@
 import random
 import os
 from blackjack_art import logo
-
 clear = lambda:os.system('cls')
-start_game = input("Do you want to play a game of blackjack? Type 'y' or 'no'")
-end_of_game = False
-user_cards = []
-computer_cards = []
 
 def deal_card():
   """Returns a random card from the deck, see hint 4"""
@@ -21,15 +16,56 @@ def calculate_score(cards):
     cards.remove(11)
     cards.append(1)
   return sum(cards)
-for _ in range(2): 
-  #_ because we do not need a variable but we want the loop to run twice
-  user_cards.append(deal_card())
-  computer_cards.append(deal_card())
-
-user_score = calculate_score(user_cards)
-computer_score = calculate_score(computer_cards)
-print(f"Your cards: {user_cards}, current score: {user_score}.")
-print(f"Computer's first card: {computer_cards[0]}.")
+def compare(user_score, computer_score):
+  if user_score > 21 and computer_score > 21:
+    return "You went over. You lose."
+  elif user_score == computer_score:
+    return "It's a draw."
+  elif user_score == 0:
+    return "Blackjack! You win!"
+  elif computer_score == 0:
+    return "Computer has a Blackjack! You lose."
+  elif user_score > 21:
+    return "Your score is over 21. You lose."
+  elif computer_score > 21:
+    return "Computer is over 21. You win!"
+  elif user_score > computer_score:
+    return "You win."
+  else:
+    return "You lose."
+def play_game():
+  print(logo)
   
-if user_score == 0 or computer_score == 0 or user_score > 21:
-  end_of_game = True
+  end_of_game = False
+  user_cards = []
+  computer_cards = []
+
+  for _ in range(2): 
+    #_ because we do not need a variable but we want the loop to run twice
+    user_cards.append(deal_card())
+    computer_cards.append(deal_card())
+  while not end_of_game:
+    user_score = calculate_score(user_cards)
+    computer_score = calculate_score(computer_cards)
+    print(f"Your cards: {user_cards}, current score: {user_score}.")
+    print(f"Computer's first card: {computer_cards[0]}.")
+    if user_score == 0 or computer_score == 0 or user_score > 21:
+      end_of_game = True
+    else:
+      should_continue = input("Do you want to draw a card? Type 'y' or 'n' to pass: ")
+      if should_continue == "y":
+        user_cards.append(deal_card())
+      else:
+        end_of_game = True
+  while computer_score != 0 and computer_score < 17:
+    computer_cards.append(deal_card())
+    computer_score = calculate_score(computer_cards)
+    
+  print(f"Your final hand is {user_cards},  final score: {user_score}.")
+  print(f"Computer's final hand is {computer_cards}, final score: {computer_score}.")
+  print(compare(user_score, computer_score))
+    
+while input("Do you want to play a game of blackjack? Type 'y' or 'no'") == "y":
+  clear()
+  play_game()
+
