@@ -1,5 +1,5 @@
 from os import system
-from secret_auction_art import logo
+from blind_auction_art import logo
 print(logo)
 end_of_auction = False
 list_of_bidders = {}
