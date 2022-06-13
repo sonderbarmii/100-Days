@@ -1,7 +1,8 @@
 import os
 from menu import MENU
 from coffee_art import logo
-clear = lambda:os.system('cls')
+def clear():
+    _ = system("clear")
 
 print (logo)
 making_coffee = True
