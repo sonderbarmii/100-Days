@@ -2,7 +2,8 @@ from higher_lower_art import logo, vs
 from game_data import data
 import random
 import os
-clear = lambda:os.system('cls')
+def clear():
+    _ = system("clear")
 
 def compare(guess, followers_a, followers_b):
   if followers_a > followers_b:
