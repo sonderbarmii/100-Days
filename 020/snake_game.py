@@ -1,5 +1,6 @@
 from turtle import Turtle, Screen
 import time
+from snake import Snake
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -10,9 +11,7 @@ screen.title("Snake Game")
 game_is_on = True
 screen.tracer(0)
 
-# create a snake body
-
-
+snake = Snake()
 
 game_is_on = True
 while game_is_on:
@@ -20,7 +19,7 @@ while game_is_on:
     time.sleep(0.1)
 
     # snake moves # tail follows head
-
+    snake.move_forward()
 
         
 
