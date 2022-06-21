@@ -19,7 +19,7 @@ while game_is_on:
     time.sleep(0.1)
 
     # snake moves # tail follows head
-    snake.move_forward()
+    snake.move_forward( )
 
         
 
