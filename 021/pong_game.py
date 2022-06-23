@@ -1,6 +1,7 @@
 from operator import truediv
 from turtle import Screen
 from paddle import Paddle
+from ball import Ball
 
 
 screen = Screen()
@@ -11,6 +12,7 @@ screen.tracer(0)
 
 rp = Paddle((350,0))
 lp = Paddle((-350,0))
+ball = Ball()
 
 screen.listen()
 screen.onkeypress(rp.up,"Up")
