@@ -3,6 +3,7 @@ from turtle import Screen
 import time
 from player import Player
 from car_manager import CarManager
+from scoreboard import Scoreboard
 
 # screen setup
 screen = Screen()
@@ -12,6 +13,7 @@ screen.title("Turtle Crossing Game")
 
 tim = Player()
 car_manager = CarManager()
+level = Scoreboard()
 
 screen.listen()
 screen.onkey(tim.up,"Up")
@@ -30,10 +32,12 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(tim) < 20:
             game_is_on = False
+            level.game_over()
 
     # detect turtle reaching finishing line
     if tim.is_at_goal():
         tim.reset_position()
         car_manager.level_up()
+
         
 screen.exitonclick()
