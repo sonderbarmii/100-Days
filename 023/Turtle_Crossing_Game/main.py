@@ -10,6 +10,9 @@ screen.title("Turtle Crossing Game")
 
 tim = Player()
 
+screen.listen()
+screen.onkey(tim.up,"Up")
+screen.onkey(tim.down,"Down")
 
 game_is_on = True
 while game_is_on:
