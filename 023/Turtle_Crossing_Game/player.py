@@ -11,7 +11,7 @@ class Player(Turtle):
         super().__init__()
         self.shape("turtle")
         self.penup()
-        self.speed("fastest")
+        self.speed(MOVE_DISTANCE)
         self.goto(STARTING_POSITION)
         self.setheading(90)
     

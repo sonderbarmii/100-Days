@@ -3,6 +3,7 @@ from turtle import Screen
 import time
 from player import Player
 
+# screen setup
 screen = Screen()
 screen.tracer(0)
 screen.setup(width=600,height=600)
