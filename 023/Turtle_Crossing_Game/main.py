@@ -1,13 +1,14 @@
-from re import T
 from turtle import Screen
 import time
-import random
+from player import Player
 
 
 screen = Screen()
 screen.tracer(0)
 screen.setup(width=600,height=600)
 screen.title("Turtle Crossing Game")
+
+tim = Player((0, -280))
 
 game_is_on = True
 while game_is_on:
