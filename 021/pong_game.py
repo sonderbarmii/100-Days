@@ -23,6 +23,7 @@ screen.onkeypress(lp.down,"s")
 game_is_on = True
 while game_is_on:
     screen.update()
+    ball.move()
 
 
 
