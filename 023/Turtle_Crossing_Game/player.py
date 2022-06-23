@@ -13,4 +13,8 @@ class Player(Turtle):
         self.penup()
         self.speed("fastest")
         self.goto(STARTING_POSITION)
+        self.setheading(90)
     
+    def up(self)
+        new_y = self.ycor() + 20
+        self.goto(self.xcor(), new_y)
