@@ -9,11 +9,14 @@ screen.bgcolor("black")
 screen.title("Pong Game")
 screen.tracer(0)
 
-p1 = Paddle()
+rp = Paddle((350,0))
+lp = Paddle((-350,0))
 
 screen.listen()
-screen.onkeypress(p1.up,"Up")
-screen.onkeypress(p1.down,"Down")
+screen.onkeypress(rp.up,"Up")
+screen.onkeypress(rp.down,"Down")
+screen.onkeypress(lp.up,"w")
+screen.onkeypress(lp.down,"s")
 
 game_is_on = True
 while game_is_on:
