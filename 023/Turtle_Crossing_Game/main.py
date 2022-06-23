@@ -27,6 +27,9 @@ while game_is_on:
     car_manager.move_cars()
 
     # detect turtle collision with car
-    
+    for car in car_manager.all_cars:
+        if car.distance(tim) < 20:
+            game_is_on = False
+            car_manager.game_over()
 
 screen.exitonclick()

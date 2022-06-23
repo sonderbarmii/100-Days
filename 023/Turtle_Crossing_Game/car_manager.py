@@ -6,6 +6,7 @@ STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 
 
+
 class CarManager(Turtle):
 
     def __init__(self):
@@ -26,6 +27,5 @@ class CarManager(Turtle):
     def move_cars(self):
         for car in self.all_cars:
             car.bk(STARTING_MOVE_DISTANCE)
-
 
 
