@@ -1,1 +1,2 @@
-file = open("my_file.txt") 
+file = open("024/exercise/my_file.txt") 
+file.read()
