@@ -12,7 +12,6 @@
 #             temperatures.append(int(row[1]))
 #     print(temperatures)
 
-from audioop import avg
 import pandas
 
 # data = pandas.read_csv("025/exercise/weather_data.csv")
