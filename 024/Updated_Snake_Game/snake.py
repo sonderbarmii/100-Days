@@ -24,10 +24,17 @@ class Snake:
         new_snake.penup()
         new_snake.goto(position)
         self.segments.append(new_snake)
+    
+    # reset snake
+    def reset(self):
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+    
     # add a new segment to the snake
     def extend(self):
         self.add_segment(self.segments[-1].position())
-
+    
     # snake moves # tail follows head
     def move_forward(self):
         for seg_num in range(len(self.segments) -1, 0, -1): #start (we want to start at 2), stop, step
