@@ -1,1 +1,1 @@
-<bound method Scoreboard.high_score of <scoreboard.Scoreboard object at 0x1086969b0>>
+5
