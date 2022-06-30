@@ -4,5 +4,5 @@
 #     print(contents)
 
 # write to a file
-with open("024/exercise/new_file.txt", mode="a") as file:
-    file.write("\nNew text. ")
+with open("024/exercise/my_file.txt", mode="a") as file:
+    file.write("\nHello")
